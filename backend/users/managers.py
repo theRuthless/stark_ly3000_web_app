@@ -5,9 +5,7 @@ Created on Wed Sep 15 2021
 @author: sagrana
 """
 
-import uuid
-from django.db import models
-from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+from django.contrib.auth.models import BaseUserManager
 from django.utils.translation import gettext as _
 
 
