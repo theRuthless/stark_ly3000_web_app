@@ -13,9 +13,10 @@ from django.db import models
 class WorkLog(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     time_spent = models.PositiveIntegerField()
-    description = models.CharField(max_length=300, null=False)
+    description = models.CharField(max_length=300, blank=False)
     logged_at = models.DateTimeField(_("Date Created"), auto_now_add=True)
     owner = models.ForeignKey("users.User", on_delete=models.CASCADE)
+    issue = models.ForeignKey("issues.Issue", on_delete=models.CASCADE, related_name="worklogs", null=True)
     objects = models.Manager()
 
     class Meta:

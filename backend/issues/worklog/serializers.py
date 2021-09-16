@@ -11,5 +11,5 @@ from .models import WorkLog
 class WorkLogSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkLog
-        fields = ("time_spent", "description", "logged_at")
-        read_only_fields = "logged_at"
+        fields = ("id", "time_spent", "description", "issue", "logged_at")
+        read_only_fields = ("logged_at", "id",)

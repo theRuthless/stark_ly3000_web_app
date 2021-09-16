@@ -12,7 +12,7 @@ from .serializers import WorkLogSerializer
 from .models import WorkLog
 
 
-class CommentViewSet(viewsets.ModelViewSet):
+class WorkLogViewSet(viewsets.ModelViewSet):
     """CommentViewSet
     """
     serializer_class = WorkLogSerializer

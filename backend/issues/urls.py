@@ -10,6 +10,7 @@ from .views import IssueDetailAPIView, IssueListCreateAPIView
 app_name = 'issues'
 
 urlpatterns = [
+    path('worklog/', include('issues.worklog.urls')),
     path('comment/', include('issues.comments.urls')),
     path('', IssueListCreateAPIView.as_view(), name="list"),
     path('<uuid:pk>/', IssueDetailAPIView.as_view(), name="detail"),

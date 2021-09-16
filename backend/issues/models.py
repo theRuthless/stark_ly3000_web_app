@@ -13,11 +13,13 @@ from .comments.models import Comment
 from .constants import ROLE_CHOICES, STATUS_CHOICES
 
 # Create your models here.
+from .worklog.models import WorkLog
 
 
 class Issue(models.Model):
     """Issue model
     """
+    # Fields
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     type = models.PositiveSmallIntegerField(choices=ROLE_CHOICES, blank=False, null=True, default=1)
     status = models.PositiveSmallIntegerField(choices=STATUS_CHOICES, blank=False, null=True, default=1)
@@ -25,7 +27,6 @@ class Issue(models.Model):
     assignee = models.ForeignKey("users.User", on_delete=models.CASCADE, related_name="owner", null=True)
     title = models.CharField(max_length=100, unique=True)
     description = models.CharField(max_length=300)
-    comments = models.ManyToManyField(Comment, related_name="issue")
     created = models.DateTimeField(_("Date Created"), auto_now_add=True)
 
     objects = Manager()

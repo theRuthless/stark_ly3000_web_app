@@ -16,7 +16,8 @@ class Comment(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     value = models.CharField(max_length=300)
     owner = models.ForeignKey("users.User", on_delete=models.CASCADE)
-    created_at = models.DateTimeField(_("Date Created"), auto_now_add=True)
+    issue = models.ForeignKey("issues.Issue", on_delete=models.CASCADE, related_name="comments", null=True)
+    created_at = models.DateTimeField(_("Date Created"), auto_now_add=True, null=True, blank=True)
 
     objects = Manager()
 
