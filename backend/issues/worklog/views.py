@@ -7,7 +7,6 @@ Created on Wed Sep 16 2021
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
-
 from .serializers import WorkLogSerializer
 from .models import WorkLog
 
