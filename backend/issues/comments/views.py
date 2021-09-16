@@ -7,16 +7,21 @@ Created on Wed Sep 16 2021
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
-
 from .serializers import CommentSerializer
 from .models import Comment
 
 
 class CommentViewSet(viewsets.ModelViewSet):
+    """CommentViewSet
+    """
     serializer_class = CommentSerializer
     queryset = Comment.objects.all()
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
 
-    def perform_create(self, serializer):
+    def perform_create(self, serializer) -> None:
+        """perform_create
+        :param serializer:
+        :return:
+        """
         serializer.save(owner=self.request.user)

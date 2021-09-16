@@ -9,7 +9,11 @@ from .models import Comment
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    """CommentSerializer
+    """
     class Meta:
+        """Meta
+        """
         model = Comment
         fields = ("id", "value", "issue")
         read_only_fields = ("id",)

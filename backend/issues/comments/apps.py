@@ -8,5 +8,7 @@ from django.apps import AppConfig
 
 
 class CommentsConfig(AppConfig):
+    """CommentsConfig
+    """
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'comments'
