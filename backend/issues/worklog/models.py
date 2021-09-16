@@ -11,6 +11,8 @@ from django.db import models
 
 # Create your models here.
 class WorkLog(models.Model):
+    """WorkLog model
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     time_spent = models.PositiveIntegerField()
     description = models.CharField(max_length=300, blank=False)
@@ -20,6 +22,8 @@ class WorkLog(models.Model):
     objects = models.Manager()
 
     class Meta:
+        """Meta
+        """
         db_table = "work_log"
 
 
