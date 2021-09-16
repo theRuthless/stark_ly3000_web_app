@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'users.apps.UsersConfig',
     'issues.apps.IssuesConfig',
+    'projects.apps.ProjectsConfig',
+    'sprints.apps.SprintsConfig'
 ]
 
 MIDDLEWARE = [
