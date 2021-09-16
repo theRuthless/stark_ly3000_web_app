@@ -9,7 +9,11 @@ from .models import WorkLog
 
 
 class WorkLogSerializer(serializers.ModelSerializer):
+    """WorkLogSerializer
+    """
     class Meta:
+        """Meta class
+        """
         model = WorkLog
         fields = ("id", "time_spent", "description", "issue", "logged_at")
         read_only_fields = ("logged_at", "id",)
