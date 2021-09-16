@@ -8,12 +8,9 @@ import uuid
 from django.db import models
 from django.db.models import Manager
 from django.utils.translation import gettext as _
-
-from .comments.models import Comment
 from .constants import ROLE_CHOICES, STATUS_CHOICES
 
 # Create your models here.
-from .worklog.models import WorkLog
 
 
 class Issue(models.Model):
@@ -28,10 +25,14 @@ class Issue(models.Model):
     title = models.CharField(max_length=100, unique=True)
     description = models.CharField(max_length=300)
     created = models.DateTimeField(_("Date Created"), auto_now_add=True)
-
+    project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="issues", null=True)
+    sprint = models.ForeignKey("sprints.Sprint", on_delete=models.CASCADE, related_name="sprint_issues", null=True)
     objects = Manager()
 
     def __str__(self):
+        """__str__
+        :return:
+        """
         return self.title
 
     class Meta:
