@@ -1,4 +1,4 @@
-# ![Major assignment](hashedin.png)
+# ![Major assignment](static/hashedin.png)
 # Stark Ticket(s) Management System
 >  A centralized ticketing system that can be accessed through APIs using Django Framework with Postgres database and delivered as containerized application using docker.
 
