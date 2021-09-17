@@ -12,11 +12,11 @@ class SprintSerializer(serializers.ModelSerializer):
     """SprintSerializer
     """
     start_date = fields.DateField(input_formats=['%Y-%m-%d'])
-    end_date = fields.DateField(input_formats=['%Y-%m-%d'])
+    end_date = fields.DateField(allow_null=True)
 
     class Meta:
         """Meta
         """
         model = Sprint
-        fields = ("id", "name", "project", "start_date", "end_date", "sprint_issues")
-        read_only_fields = ("id", "sprint_issues", "start_date", "end_date")
+        fields = ("id", "name", "project", "start_date", "is_active", "sprint_issues", "end_date")
+        read_only_fields = ("id", "sprint_issues", "start_date", "end_date", "is_active")

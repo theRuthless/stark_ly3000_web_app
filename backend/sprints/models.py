@@ -19,6 +19,13 @@ class Sprint(models.Model):
     owner = models.ForeignKey("users.User", on_delete=models.CASCADE)
     objects = models.Manager()
 
+    @property
+    def is_active(self) -> bool:
+        if self.end_date:
+            return True
+        else:
+            return False
+
     class Meta:
         """Meta
         """
