@@ -66,12 +66,3 @@ class IssueDetailAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Issue.objects.all()
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
-
-    def patch(self, request, *args, **kwargs):
-        """patch
-        :param request:
-        :param args:
-        :param kwargs:
-        :return:
-        """
-        pass
