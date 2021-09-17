@@ -68,6 +68,8 @@ class SprintListCreateAPIView(ListCreateAPIView):
         :return: Response instance
         :rtype: Response
         """
+        if request.data['start_date'] > request.data['end_date']:
+            return Response({"message": "Start Date should be before end date"}, status=status.HTTP_400_BAD_REQUEST)
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
