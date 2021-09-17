@@ -128,7 +128,7 @@ class SprintLogTest(APITestCase):
     def test_sprint_create(self):
         """test_sprint_create
         """
-        data = {"name": "sprint3", "project": self.project.id, "start_date": "2020-02-02", "end_date": ""}
+        data = {"name": "sprint37", "project": self.project.id, "start_date": "2020-02-02", "end_date": ""}
         resp = self.client.post(self.base_url, data=data, HTTP_AUTHORIZATION=f'Bearer {self.manager_token}')
         self.assertEqual(resp.status_code, status.HTTP_201_CREATED)
 
@@ -142,9 +142,16 @@ class SprintLogTest(APITestCase):
     def test_sprint_create_admin_user(self):
         """test_sprint_create_admin_user
         """
-        data = {"name": "sprint5", "project": self.project.id, "start_date": "2020-02-02", "end_date": ""}
+        data = {"name": "sprint56", "project": self.project.id, "start_date": "2020-02-02", "end_date": ""}
         resp = self.client.post(self.base_url, data=data, HTTP_AUTHORIZATION=f'Bearer {self.admin_token}')
         self.assertEqual(resp.status_code, status.HTTP_201_CREATED)
+
+    def test_sprint_create_start_date_after_end_date_fail(self):
+        """test_sprint_create_start_date_after_end_date_fail
+        """
+        data = {"name": "sprint5", "project": self.project.id, "start_date": "2020-02-02", "end_date": "2020-02-01"}
+        resp = self.client.post(self.base_url, data=data, HTTP_AUTHORIZATION=f'Bearer {self.admin_token}')
+        self.assertEqual(resp.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_sprint_create_fail_no_permission_standard_user(self):
         """test_sprint_create_fail_no_permission_standard_user
@@ -163,7 +170,7 @@ class SprintLogTest(APITestCase):
     def test_sprint_create_fail_bad_request(self):
         """test_sprint_create_fail_bad_request
         """
-        data = {"project": self.project.id}
+        data = {"project": self.project.id, "end_date": ""}
         resp = self.client.post(self.base_url, data=data, HTTP_AUTHORIZATION=f'Bearer {self.manager_token}')
         self.assertEqual(resp.status_code, status.HTTP_400_BAD_REQUEST)
 
