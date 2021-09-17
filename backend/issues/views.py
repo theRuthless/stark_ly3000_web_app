@@ -4,6 +4,7 @@
 Created on Wed Sep 15 2021
 @author: sagrana
 """
+import django_filters
 from rest_framework import status
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
@@ -16,6 +17,7 @@ from .models import Issue
 class IssueListCreateAPIView(ListCreateAPIView):
     """IssueListCreateAPIView
     """
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
     serializer_class = IssueSerializer
@@ -62,6 +64,7 @@ class IssueListCreateAPIView(ListCreateAPIView):
 class IssueDetailAPIView(RetrieveUpdateDestroyAPIView):
     """IssueDetailAPIView
     """
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
     serializer_class = IssueSerializer
     queryset = Issue.objects.all()
     permission_classes = (IsAuthenticated,)
