@@ -17,7 +17,7 @@ def notify_user(watcher_id):
     # Fetch information for Email Body using watcher id
     print("Email Sent!!")
     message = "Watcher Added"
-    context = ssl.create_default_context()
-    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message)
+    # context = ssl.create_default_context()
+    # with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+    #     server.login(sender_email, password)
+    #     server.sendmail(sender_email, receiver_email, message)
