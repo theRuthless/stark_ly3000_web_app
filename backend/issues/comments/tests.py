@@ -18,7 +18,7 @@ from .models import Comment
 
 
 class CommentsTest(APITestCase):
-    """ Test module for Issue """
+    """ Test module for Comment """
 
     def setUp(self):
         """setUp
@@ -127,11 +127,11 @@ class CommentsTest(APITestCase):
                                  HTTP_AUTHORIZATION=f'Bearer {self.token}')
         self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
 
-    def test_issue_update_fail_unauthenticated(self):
-        """test_issue_update_fail_unauthenticated
+    def test_comment_update_fail_unauthenticated(self):
+        """test_comment_update_fail_unauthenticated
         """
-        data = dict(title="Update Title 1")
-        resp = self.client.patch(f'/api/issues/{self.issue.id}/', data=data,
+        data = dict(value="Update value")
+        resp = self.client.patch(f'{self.base_url}{self.comment.id}/', data=data,
                                  HTTP_AUTHORIZATION=f'Bearer {uuid.uuid4()}')
         self.assertEqual(resp.status_code, status.HTTP_401_UNAUTHORIZED)
 
