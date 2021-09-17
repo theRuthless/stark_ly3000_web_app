@@ -528,7 +528,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"test@test.com\",\n    \"password\": \"testpass\",\n    \"role\": 1\n}",
+							"raw": "{\n    \"email\": \"test2@test.com\",\n    \"password\": \"testpass2\",\n    \"role\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -581,6 +581,378 @@
 								"api",
 								"auth",
 								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "projects",
+			"item": [
+				{
+					"name": "project_create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/issues/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"issues",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "projects_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "project_detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "projects_update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiODI3Zjg5ZDAtMzlmMi00YTBiLWE4MTUtMGE0NmNlZDZkMzgzIiwidXNlcm5hbWUiOiJ0ZXN0QHRlc3QuY29tIiwiZXhwIjoxNjM0MzI0MTkwLCJlbWFpbCI6InRlc3RAdGVzdC5jb20ifQ.l6KtN2LrHJHCBYunY2N2IBUfKmMMBLWR1T4uzj1S8XA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects/61f41de3-1ed3-4023-a0d8-dcd4ad591d28/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"61f41de3-1ed3-4023-a0d8-dcd4ad591d28",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "projects_delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects/61f41de3-1ed3-4023-a0d8-dcd4ad591d28/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"61f41de3-1ed3-4023-a0d8-dcd4ad591d28",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sprints",
+			"item": [
+				{
+					"name": "sprint_create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMzI0ZDg1OTItMjZmNS00MmY1LTgxMDctNjcyMTkyZTQwM2Y0IiwidXNlcm5hbWUiOiJ0ZXN0MkB0ZXN0LmNvbSIsImV4cCI6MTYzNDM5NTM0NywiZW1haWwiOiJ0ZXN0MkB0ZXN0LmNvbSJ9.troVdirM-srhv1lwew9RNXKg5yespX00ohUEavfJwWs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"sprint1\",\n    \"project\": \"61f41de3-1ed3-4023-a0d8-dcd4ad591d28\",\n    \"start_date\": \"2021-02-02\",\n    \"end_date\": \"2021-02-17\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/sprints/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"sprints",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sprints_list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMzI0ZDg1OTItMjZmNS00MmY1LTgxMDctNjcyMTkyZTQwM2Y0IiwidXNlcm5hbWUiOiJ0ZXN0MkB0ZXN0LmNvbSIsImV4cCI6MTYzNDM5NTM0NywiZW1haWwiOiJ0ZXN0MkB0ZXN0LmNvbSJ9.troVdirM-srhv1lwew9RNXKg5yespX00ohUEavfJwWs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/sprints/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"sprints",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sprint_detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMzI0ZDg1OTItMjZmNS00MmY1LTgxMDctNjcyMTkyZTQwM2Y0IiwidXNlcm5hbWUiOiJ0ZXN0MkB0ZXN0LmNvbSIsImV4cCI6MTYzNDM5NTM0NywiZW1haWwiOiJ0ZXN0MkB0ZXN0LmNvbSJ9.troVdirM-srhv1lwew9RNXKg5yespX00ohUEavfJwWs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/sprints/61f41de3-1ed3-4023-a0d8-dcd4ad591d28/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"sprints",
+								"61f41de3-1ed3-4023-a0d8-dcd4ad591d28",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "watchers",
+			"item": [
+				{
+					"name": "watcher_create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiODI3Zjg5ZDAtMzlmMi00YTBiLWE4MTUtMGE0NmNlZDZkMzgzIiwidXNlcm5hbWUiOiJ0ZXN0QHRlc3QuY29tIiwiZXhwIjoxNjM0NDUwODAzLCJlbWFpbCI6InRlc3RAdGVzdC5jb20ifQ.Yc8XVR5K5PGgqoNhQSblHmOUnuFVhtdjQs43jgWIaBE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"issue\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/watchers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"watchers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "watchers_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "watcher_detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiODI3Zjg5ZDAtMzlmMi00YTBiLWE4MTUtMGE0NmNlZDZkMzgzIiwidXNlcm5hbWUiOiJ0ZXN0QHRlc3QuY29tIiwiZXhwIjoxNjM0NDUwODAzLCJlbWFpbCI6InRlc3RAdGVzdC5jb20ifQ.Yc8XVR5K5PGgqoNhQSblHmOUnuFVhtdjQs43jgWIaBE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/watchers/610b7f0f-16a2-4b5e-a485-c6223bcb89f6/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"watchers",
+								"610b7f0f-16a2-4b5e-a485-c6223bcb89f6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "watchers_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiODI3Zjg5ZDAtMzlmMi00YTBiLWE4MTUtMGE0NmNlZDZkMzgzIiwidXNlcm5hbWUiOiJ0ZXN0QHRlc3QuY29tIiwiZXhwIjoxNjM0NDUwODAzLCJlbWFpbCI6InRlc3RAdGVzdC5jb20ifQ.Yc8XVR5K5PGgqoNhQSblHmOUnuFVhtdjQs43jgWIaBE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/watchers/610b7f0f-16a2-4b5e-a485-c6223bcb89f6/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"watchers",
+								"610b7f0f-16a2-4b5e-a485-c6223bcb89f6",
+								""
 							]
 						}
 					},
