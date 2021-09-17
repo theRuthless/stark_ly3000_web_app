@@ -117,8 +117,8 @@ class IssueTest(APITestCase):
         """
         data = dict(title="Update Title 1")
         resp = self.client.patch(f'/api/issues/{self.issue.id}/', data=data,
-                                 HTTP_AUTHORIZATION=f'Bearer {self.token}')
-        self.assertEqual(resp.status_code, status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
+                                 HTTP_AUTHORIZATION=f'Bearer {self.token}', content_type='application/json')
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)
 
     def test_issue_update_fail_incorrect_pk(self):
         """test_issue_update
