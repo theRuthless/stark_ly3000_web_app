@@ -19,6 +19,7 @@ api_urls = [
     path('projects/', include('projects.urls')),
     path('sprints/', include('sprints.urls')),
     path('issues/', include('issues.urls')),
+    path('watchers/', include('watchers.urls')),
     path('auth/', include('users.urls')),
 ]
 
