@@ -24,3 +24,8 @@ $ python manage.py runserver
 ```
 
 ## Features
+#### 1. Project Management
+#### 2. Issue/Tickets Management
+#### 3. Sprint Management
+#### 4. Watcher(s) Management
+
