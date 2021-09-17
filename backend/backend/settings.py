@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'issues.apps.IssuesConfig',
     'projects.apps.ProjectsConfig',
-    'sprints.apps.SprintsConfig'
+    'sprints.apps.SprintsConfig',
+    'watchers.apps.WatchersConfig'
 ]
 
 MIDDLEWARE = [
